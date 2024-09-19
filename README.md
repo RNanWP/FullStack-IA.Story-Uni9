@@ -1,13 +1,13 @@
 <h1 align="center">StoryTales AI</h1>
 
 <p align="center">
-  <img src="https://example.com/logo.png" alt="Logo do StoryTales AI" width="200">
+  <img src="./app/Logo.png" alt="Logo do StoryTales AI" width="200">
 </p>
 
 <h4 align="center">Crie histórias infantis únicas com o poder da Inteligência Artificial</h4>
 
 <p align="center">
-  <a href="https://github.com/seuusuario/storytales-ai">
+  <a href="https://github.com/RNanWP/FullStack-IA.Story-Uni9">
     <img alt="GitHub" src="https://img.shields.io/badge/GitHub-Repository-blue">
   </a>
 </p>
