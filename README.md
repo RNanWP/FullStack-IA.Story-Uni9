@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/RNanWP/FullStack-IA.Story-Uni9">
-    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-Repository-blue">
+    <!-- <img alt="GitHub" src="https://img.shields.io/badge/GitHub-Repository-blue"> -->
   </a>
 </p>
 
@@ -24,7 +24,7 @@
   <li><strong>Front-end:</strong> React, Tailwind CSS</li>
   <li><strong>Back-end:</strong> Node.js, Next.js</li>
   <li><strong>API de IA:</strong> OpenAI GPT</li>
-  <li><strong>Banco de Dados:</strong> MongoDB</li>
+  <!--<li><strong>Banco de Dados:</strong> MongoDB</li>-->
 </ul>
 
 <br>
@@ -33,8 +33,8 @@
 
 - Criação de histórias infantis com base no input do usuário
 - Interface amigável e responsiva
-- Possibilidade de salvar histórias favoritas
-- Compartilhamento de histórias via redes sociais
+<!-- - Possibilidade de salvar histórias favoritas -->
+<!-- - Compartilhamento de histórias via redes sociais -->
 
 <br>
 
