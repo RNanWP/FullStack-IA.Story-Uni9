@@ -29,15 +29,15 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen]=useState(false);
 
   return (
-    <Navbar maxWidth='full' onMenuOpenChange={setIsMenuOpen}>
+    <Navbar maxWidth='full' onMenuOpenChange={setIsMenuOpen} className='py-2 px-6'>
         <NavbarContent>
             <NavbarMenuToggle
             aria-label={isMenuOpen?"Fechar menu":"Abrir menu"}
             className='sm:hidden'
             />
-            <NavbarBrand>
-                <Image src={'/logo.svg'} alt='logo' width={40} height={40}/>
-                <h2 className='font-bold text-2xl text-primary ml-3'>StoryTales AI</h2>
+            <NavbarBrand className='flex items-center'>
+                <Image src={'/logo.svg'} alt='logo' width={70} height={50}/>
+                <h2 className='font-bold text-2xl text-primary ml-3'>StoryTales Rn®</h2>
             </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify='center' className='hidden sm:flex'>
