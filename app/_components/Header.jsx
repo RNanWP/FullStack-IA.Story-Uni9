@@ -30,53 +30,66 @@ function Header() {
     const [isLogoHovered, setIsLogoHovered] = useState(false);
 
   return (
-    <Navbar maxWidth='full' onMenuOpenChange={setIsMenuOpen} className='py-3 px-6'>
+    <Navbar maxWidth='full' onMenuOpenChange={setIsMenuOpen} className='py-2 px-6'>
         <NavbarContent>
             <NavbarMenuToggle
             aria-label={isMenuOpen?"Fechar menu":"Abrir menu"}
             className='sm:hidden'
             />
+            {/*- COMEÇO LOGO* -*/}
             <NavbarBrand className='flex items-center'>
-            <Link href="https://rnanwp-meu-site.netlify.app/">
-            <div className={`transition-transform duration-300 ${isLogoHovered ? 'scale-110' : 'scale-100'}`}>
-                <Image 
-                src={'/logo.svg'} 
-                alt='logo' 
-                width={70} 
-                height={50} 
-                className="cursor-pointer transition-transform duration-300 ${isLogoHovered ? 'scale-110' : 'scale-100'}`}"
-                onMouseEnter={() => setIsLogoHovered(true)}
-                onMouseLeave={() => setIsLogoHovered(false)}
-                />
-                    </div>
+                <Link href="https://rnanwp-meu-site.netlify.app/">
+                    <Image 
+                        src={'/logo.svg'} 
+                        alt='logo' 
+                        width={isLogoHovered ? 70 : 60} 
+                        height={isLogoHovered ? 50 : 40} 
+                        className={`transition-all duration-300 ${isLogoHovered ? 'scale-110' : ''}`} 
+                        onMouseEnter={() => setIsLogoHovered(true)} 
+                        onMouseLeave={() => setIsLogoHovered(false)}
+                    />
                 </Link>
                 <h2 className='font-bold text-2xl text-primary ml-3'>StoryTales Rn®</h2>
             </NavbarBrand>
+            {/*- FIM DA LOGO* -*/}
         </NavbarContent>
-        <NavbarContent justify='center' className='hidden sm:flex '>
+                                                
+        {/*- BARRA DE NAVEGAÇÃO MAIOR* -*/}
+        <NavbarContent justify='center' className='hidden sm:flex'>
             {MenuList.map((item, index)=>(
-                <NavbarItem className='relative group inline-block'>
-                    <Link href={item.path} className='text-xl text-primary font-medium px-4 py-2 relative z-10 hover:bg-blue-300 hover:py-4 hover:px-5 rounded-md transition-all duration-300'>
-                        {item.name}
+                <NavbarItem key={index} className='relative group inline-block'>
+                    <Link 
+                        href={item.path} 
+                        className='text-xl text-primary font-medium px-4 py-2 relative z-10 hover:bg-[#a8a8a8] hover:py-4 hover:px-5 rounded-md transition-all duration-300'>
+                    {item.name}
                     </Link>
                 </NavbarItem>
-            ))
-            }
+            ))}
         </NavbarContent>
+        {/*- FIM BARRA DE NAVEGAÇÃO MAIOR* -*/}
+                                                
+        {/*- Menu para telas menores -*/}
+        <NavbarContent className='sm:hidden'>
+                <NavbarMenu>
+                    {MenuList.map((item, index) => (
+                        <NavbarMenuItem key={index}>
+                            <Link 
+                                href={item.path} 
+                                className='block px-4 py-2 text-gray-800 hover:bg-gray-200'>
+                                {item.name}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
+                </NavbarMenu>
+            </NavbarContent>
+                    
+        {/*- COMEÇO DO BOTÃO -*/}
         <NavbarContent justify='end'>
             <Button color='primary'>Começar</Button>
         </NavbarContent>
-        <NavbarMenu>
-            {MenuList.map((item, index)=>(
-                <NavbarMenuItem>
-                    <Link href={item.path}>
-                    {item.name}
-                    </Link>
-                </NavbarMenuItem>
-            ))}
-        </NavbarMenu>
+        {/*- FIM DO BOTÃO -*/}
     </Navbar>
-  )
+  );
 }
 
 export default Header;
