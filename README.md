@@ -1,4 +1,4 @@
-<h1 align="center">StoryTales AI</h1>
+<h1 align="center">StoryTales Rn®</h1>
 
 <p align="center">
   <img src="./app/Logo.png" alt="Logo do StoryTales AI" width="200">
