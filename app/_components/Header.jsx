@@ -85,7 +85,7 @@ function Header() {
                     
         {/*- COMEÇO DO BOTÃO -*/}
         <NavbarContent justify='end'>
-            <Button color='primary'>Começar</Button>
+            <Button color='primary' className='tet-2xl p-6'>Começar</Button>
         </NavbarContent>
         {/*- FIM DO BOTÃO -*/}
     </Navbar>

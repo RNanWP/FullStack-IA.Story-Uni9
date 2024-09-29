@@ -8,10 +8,10 @@ function Hero() {
     <div className='px-10 md:px-28 lg:px-44 mt-10 h-screen'>
         <div className='grid grid-cols-1 md:grid-cols-2'>
             <div>
-                <h2 className='text-[70px] text-primary font-extrabold py-10'>Crie histórias mágicas para crianças em minutos</h2>
-                <p className='text-2xl text-primary font-light'>Crie histórias divertidas e personalizadas que dão vida às aventuras do seu filho e despertam o seu passo para a leitura. Leva apenas alguns segundos</p>
+                <h2 className='text-[70px] text-primary font-extrabold py-20'>Crie Histórias <br></br> Mágicas para crianças em Minutos</h2>
+                <p className='text-3xl text-primary font-light'>Crie histórias divertidas e personalizadas que dão vida às aventuras do seu filho e despertam o seu passo para a leitura. Leva apenas alguns segundos!</p>
                 <Link href={'/create-story'}>
-                <Button size='lg' color='primary' className='mt-5 font-bold tet-2xl p-8'>Criar História</Button>
+                <Button size='lg' color='primary' className='mt-10 font-bold tet-2xl p-8'>Criar História</Button>
                 </Link>
             </div>
             <div className='relative'>
