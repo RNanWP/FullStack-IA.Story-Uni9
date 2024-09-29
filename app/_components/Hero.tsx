@@ -14,8 +14,13 @@ function Hero() {
                 <Button size='lg' color='primary' className='mt-5 font-bold tet-2xl p-8'>Criar História</Button>
                 </Link>
             </div>
-            <div>
-                <Image src={'/hero.png'} alt='hero' width={700} height={400}/>
+            <div className='relative'>
+                <Image src={'/hero.png'} 
+                alt='hero' 
+                width={700} 
+                height={400}
+                className='transform translate-x-20'
+                />
             </div>
         </div>
     </div>

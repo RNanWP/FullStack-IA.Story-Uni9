@@ -55,7 +55,7 @@ function Header() {
         </NavbarContent>
                                                 
         {/*- BARRA DE NAVEGAÇÃO MAIOR* -*/}
-        <NavbarContent justify='center' className='hidden sm:flex'>
+        <NavbarContent justify='center' className='  sm:flex'>
             {MenuList.map((item, index)=>(
                 <NavbarItem key={index} className='relative group inline-block'>
                     <Link 
