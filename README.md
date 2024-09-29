@@ -1,7 +1,7 @@
 <h1 align="center">StoryTales AI</h1>
 
 <p align="center">
-  <img src="./app/Logo.jpg" alt="Logo do StoryTales AI" width="200">
+  <img src="./app/Logo.png" alt="Logo do StoryTales AI" width="200">
 </p>
 
 <h4 align="center">Crie histórias infantis únicas com o poder da Inteligência Artificial</h4>
