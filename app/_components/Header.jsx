@@ -5,9 +5,11 @@ import {  Navbar,   NavbarBrand,   NavbarContent,   NavbarItem,   NavbarMenuTogg
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@nextui-org/button';
+import { UserButton, useUser } from '@clerk/nextjs';
 
 function Header() {
 
+    const {user,isSignedIn}=useUser();
     const MenuList=[
         {
             name:'Inicio',
@@ -85,7 +87,15 @@ function Header() {
                     
         {/*- COMEÇO DO BOTÃO -*/}
         <NavbarContent justify='end'>
-            <Button color='primary' className='tet-2xl p-6'>Começar</Button>
+            <Link href={'/dashboard'}>
+            <Button color='primary' className='tet-2xl p-6'>
+                {isSignedIn?
+                'Painel':
+                'Começar'
+            }
+            </Button>
+            </Link>
+            <UserButton/>
         </NavbarContent>
         {/*- FIM DO BOTÃO -*/}
     </Navbar>

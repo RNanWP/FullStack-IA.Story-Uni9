@@ -5,9 +5,9 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='px-10 md:px-28 lg:px-44 mt-10 h-screen'>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
-            <div>
+    <div className='px-10 md:px-28 lg:px-44 mt-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 h-full'>
+            <div >
                 <h2 className='text-[70px] text-primary font-extrabold py-20'>Crie Histórias <br></br> Mágicas para crianças em Minutos</h2>
                 <p className='text-3xl text-primary font-light'>Crie histórias divertidas e personalizadas que dão vida às aventuras do seu filho e despertam o seu passo para a leitura. Leva apenas alguns segundos!</p>
                 <Link href={'/create-story'}>
@@ -15,11 +15,12 @@ function Hero() {
                 </Link>
             </div>
             <div className='relative'>
-                <Image src={'/hero.png'} 
-                alt='hero' 
-                width={700} 
-                height={400}
-                className='transform translate-x-20'
+                <Image 
+                  src={'/hero.png'} 
+                  alt='hero' 
+                  width={700} 
+                  height={400}
+                  className='transform translate-x-20'
                 />
             </div>
         </div>
