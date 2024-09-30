@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #d5d5d5;
   --foreground: #171717;
 }
 
@@ -21,6 +21,7 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 @layer utilities {

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Provider from "./provider";
 import {Nunito} from 'next/font/google'
+import Header from "./_components/Header";
 
 const MyAppFont=Nunito({subsets:['latin']});
 
