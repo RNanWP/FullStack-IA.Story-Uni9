@@ -1,9 +1,7 @@
-
-"use client"
-import Image from 'next/image'
+import Image from 'next/image';
 import React, { useState } from 'react'
 
-function StoryType() {
+function AgeGroup() {
     const OptionList=[
         {
             label:'Livro de histórias',
@@ -50,4 +48,4 @@ function StoryType() {
   )
 }
 
-export default StoryType
+export default AgeGroup
