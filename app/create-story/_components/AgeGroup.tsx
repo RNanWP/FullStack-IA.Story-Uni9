@@ -4,18 +4,18 @@ import React, { useState } from 'react'
 function AgeGroup() {
     const OptionList=[
         {
-            label:'Livro de histórias',
-            imageUrl:'/story.png',
+            label:'0-2 Anos',
+            imageUrl:'/02Years.png',
             isFree:true
         },
         {
-            label:'Contos para dormir',
-            imageUrl:'/bedstory.png',
+            label:'3-5 Anos',
+            imageUrl:'/35Years.png',
             isFree:true
         },
         {
-            label:'Educativo',
-            imageUrl:'/educational.png',
+            label:'5-8 Anos',
+            imageUrl:'/58Years.png',
             isFree:true
         }
     ]
@@ -24,7 +24,7 @@ function AgeGroup() {
 
   return (
     <div>
-        <label className='font-bold text-4xl text-primary'>2. Tipo de história</label>
+        <label className='font-bold text-4xl text-primary'>3. Faixa etária</label>
         <div className='grid grid-cols-3 gap-5 mt-3
         '>
             {OptionList.map((item,index)=>(
