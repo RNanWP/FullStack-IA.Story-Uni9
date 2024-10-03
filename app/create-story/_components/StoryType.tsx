@@ -33,7 +33,7 @@ function StoryType() {
             <div 
                 key={index} 
                 className={`relative grayscale hover:grayscale-0 cursor-pointer p-1 transition-transform duration-200
-                ${selectedOption==item.label?'grayscale-0 border-4 shadow-2xl rounded-3xl border-primary':' grayscale'}
+                ${selectedOption==item.label?'grayscale-0 border-4 shadow-xl rounded-3xl border-primary':' grayscale'}
                 `} onClick={()=>setSelectOption(item.label)}>
                     
                 <h2 className='absolute bottom-4 text-2xl text-white text-center w-full'>{item.label}</h2>
