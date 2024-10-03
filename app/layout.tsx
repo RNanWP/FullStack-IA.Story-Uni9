@@ -19,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={MyAppFont.className}
-      >
+      <body className={MyAppFont.className}>
         <Provider>
         {children}
         </Provider>

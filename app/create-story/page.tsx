@@ -21,7 +21,7 @@ function CreateStory() {
       <h2 className='font-extrabold text-[70px] text-primary text-center'>Crie Sua História </h2>
       <p className='text-2xl text-primary text-center'>Desperte sua criatividade com a IA: crie histórias de maneira única! Permita que nossa inteligência artificial traga à vida sua imaginação, uma história de cada vez.</p>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mt-1'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mt-14'>
       {/*Assunto da história */}
       <StorySubjectInput userSelection={onHandleUserSelection}/>
       {/*Tipo de história*/}

@@ -9,6 +9,7 @@ function Provider({children}:{children: React.ReactNode}) {
     <NextUIProvider>
       {/*Header*/}
       <Header/>
+      
       {children}
     </NextUIProvider>
     </ClerkProvider>
