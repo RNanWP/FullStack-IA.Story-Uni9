@@ -4,6 +4,7 @@ import React from 'react'
 import StorySubjectInput from './_components/StorySubjectInput'
 import StoryType from './_components/StoryType'
 import AgeGroup from './_components/AgeGroup'
+import ImageStyle from './_components/ImageStyle'
 
 export interface fieldData{
   fieldName:String,
@@ -29,9 +30,8 @@ function CreateStory() {
       <StoryType/>
       {/*Faixa etária*/}
       <AgeGroup/>
-
       {/*Estilo de imagem*/}
-      
+      <ImageStyle/>
       </div>
     </div>
   )
