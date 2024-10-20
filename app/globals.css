@@ -13,6 +13,15 @@
     --foreground: #ededed;
   }
 }
+/* Exemplo de uma media query */
+@media screen and (max-width: 768px) {
+  /* Regras CSS para telas menores que 768px */
+  .container {
+    width: 100%;  /* A largura vai se ajustar para 100% da tela */
+    padding: 10px;
+  }
+}
+
 
 body {
   color: var(--foreground);
