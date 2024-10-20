@@ -31,7 +31,7 @@ function CreateStory() {
   const onHandleUserSelection=(data:fieldData)=>{
     setFormData((prev:any)=>({
       ...prev,
-      [data.fieldName]:data.fieldValue
+      [String(data.fieldName)]:data.fieldValue
     }));
     console.log(formData)
   }
