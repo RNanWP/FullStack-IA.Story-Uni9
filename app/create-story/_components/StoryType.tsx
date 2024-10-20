@@ -3,7 +3,13 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-function StoryType() {
+export interface OptionField{
+    label:string,
+    imageUrl:string,
+    isFree:boolean
+}
+
+function StoryType({userSelection}:any) {
     const OptionList=[
         {
             label:'Livro de histórias',
@@ -24,6 +30,14 @@ function StoryType() {
 
     const [selectedOption,setSelectOption]=useState<string>();
 
+    const onUserSelect=(item:OptionField)=>{
+        setSelectOption(item.label);
+        userSelection({
+            fieldValue:item?.label,
+            fieldName:'storyType'
+        })
+    }
+
   return (
     <div>
         <label className='font-bold text-4xl text-primary'>2. Tipo de história</label>
@@ -34,7 +48,7 @@ function StoryType() {
                 key={index} 
                 className={`relative grayscale hover:grayscale-0 cursor-pointer p-1 transition-transform duration-200
                 ${selectedOption==item.label?'grayscale-0 border-4 border-[#FFAB00] shadow-xl rounded-3xl':' grayscale'}
-                `} onClick={()=>setSelectOption(item.label)}>
+                `} onClick={()=>onUserSelect(item)}>
                     
                 <h2 className='absolute bottom-4 text-2xl text-white text-center w-full'>{item.label}</h2>
                 <Image 

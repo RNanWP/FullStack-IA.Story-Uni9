@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
+import { OptionField } from './StoryType';
 
-function AgeGroup() {
+function AgeGroup({userSelection}:any) {
     const OptionList=[
         {
             label:'0-2 Anos',
@@ -21,8 +22,16 @@ function AgeGroup() {
     ]
 
     const [selectedOption,setSelectOption]=useState<string>();
-
-  return (
+    const onUserSelect=(item:OptionField)=>{
+        setSelectOption(item.label);
+        userSelection({
+            fieldValue:item?.label,
+            fieldName:'ageGroup'
+        })
+    }
+  
+  
+    return (
     <div>
         <label className='font-bold text-4xl text-primary'>3. Faixa etária</label>
         <div className='grid grid-cols-3 gap-5 mt-3
@@ -32,7 +41,7 @@ function AgeGroup() {
                 key={index} 
                 className={`relative grayscale hover:grayscale-0 cursor-pointer p-1 transition-transform duration-200
                 ${selectedOption==item.label?'grayscale-0 border-4 border-[#FFAB00] shadow-xl rounded-3xl':' grayscale'}
-                `} onClick={()=>setSelectOption(item.label)}>
+                `} onClick={()=>onUserSelect(item)}>
                     
                 <h2 className='absolute bottom-4 text-2xl text-white text-center w-full'>{item.label}</h2>
                 <Image 
