@@ -17,7 +17,7 @@ function Header() {
         },
         {
             name:'Criar história',
-            path:'/criar-história'
+            path:'/create-story'
         },
         {
             name:'Explore a história',
@@ -25,7 +25,7 @@ function Header() {
         },
         {
             name:'Contate-nos',
-            path:'/contate-nos'
+            path:'/contact'
         }
     ]
     const [isMenuOpen, setIsMenuOpen]=useState(false);
