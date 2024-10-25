@@ -44,8 +44,8 @@ function Header() {
                     <Image 
                         src={'/logo.svg'} 
                         alt='logo' 
-                        width={isLogoHovered ? 70 : 60} 
-                        height={isLogoHovered ? 50 : 40} 
+                        width={isLogoHovered ? 60 : 50} 
+                        height={isLogoHovered ? 40 : 30} 
                         className={`transition-all duration-300 ${isLogoHovered ? 'scale-110' : ''}`} 
                         onMouseEnter={() => setIsLogoHovered(true)} 
                         onMouseLeave={() => setIsLogoHovered(false)}
@@ -62,7 +62,7 @@ function Header() {
                 <NavbarItem key={index} className='relative group inline-block'>
                     <Link 
                         href={item.path} 
-                        className='text-xl text-primary font-medium px-4 py-2 relative z-10 hover:bg-[#a8a8a8] hover:py-4 hover:px-5 rounded-md transition-all duration-300'>
+                        className='text-xl text-primary font-medium px-4 py-2 relative z-10 hover:bg-[#a8a8a8] hover:py-3 hover:px-5 rounded-md transition-all duration-300'>
                     {item.name}
                     </Link>
                 </NavbarItem>
@@ -77,7 +77,7 @@ function Header() {
                         <NavbarMenuItem key={index}>
                             <Link 
                                 href={item.path} 
-                                className='block px-4 py-2 text-gray-800 hover:bg-gray-200'>
+                                className='block px-8 py-2 text-gray-800 hover:bg-gray-200'>
                                 {item.name}
                             </Link>
                         </NavbarMenuItem>

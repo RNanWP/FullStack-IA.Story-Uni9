@@ -5,7 +5,7 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='px-10 md:px-28 lg:px-44 m-10 h-screen'>
+    <div className='px-10 md:px-28 lg:px-44 m-10 min-h-screen'>
         <div className='grid grid-cols-1 md:grid-cols-2'>
             <div>
                 <h2 className='text-[70px] text-primary font-extrabold py-20'>Crie Histórias <br></br> Mágicas para crianças em Minutos</h2>
@@ -20,7 +20,7 @@ function Hero() {
                   alt='hero' 
                   width={700} 
                   height={400}
-                  className='transform translate-x-20'
+                  className='object-contain translate-x-20'
                 />
             </div>
         </div>

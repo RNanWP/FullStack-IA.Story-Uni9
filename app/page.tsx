@@ -7,7 +7,7 @@ import Hero from "./_components/Hero";
 
 export default function Home() {
   return (
-    <div className="bg-[#d5d5d5] flex-grow overflow-hidden">
+    <div className="bg-[#d5d5d5] flex-grow">
 
       {/*Hero*/}
       <Hero/>
