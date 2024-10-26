@@ -51,7 +51,8 @@ function Header() {
                         onMouseLeave={() => setIsLogoHovered(false)}
                     />
                 </Link>
-                <h2 className='font-bold text-2xl text-primary ml-3'>StoryTales Rn®</h2>
+                <h2 className='font-bold text-2xl text-primary ml-3'
+                >StoryTales Rn®</h2>
             </NavbarBrand>
             {/*- FIM DA LOGO* -*/}
         </NavbarContent>
@@ -62,7 +63,7 @@ function Header() {
                 <NavbarItem key={index} className='relative group inline-block'>
                     <Link 
                         href={item.path} 
-                        className='text-xl text-primary font-medium px-4 py-2 relative z-10 hover:bg-[#a8a8a8] hover:py-3 hover:px-5 rounded-md transition-all duration-300'>
+                        className='text-xl text-primary font-medium px-4 py-2 relative z-10 hover:bg-[#bdbdbd] hover:py-3 hover:px-5 rounded-md transition-all duration-300'>
                     {item.name}
                     </Link>
                 </NavbarItem>
@@ -88,7 +89,10 @@ function Header() {
         {/*- COMEÇO DO BOTÃO -*/}
         <NavbarContent justify='end'>
             <Link href={'/dashboard'}>
-            <Button color='primary' className='tet-2xl p-6'>
+            <Button 
+            style={{ backgroundColor: '#3B82F6', 
+            color: '#ffffff' }} 
+            className='text-xl px-6'>
                 {isSignedIn?
                 'Painel':
                 'Começar'
