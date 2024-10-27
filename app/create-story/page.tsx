@@ -53,7 +53,7 @@ function CreateStory() {
       </div>
 
       <div className='flex justify-end my-10'>
-        <Button color='primary' className='p-10 text-2xl'>Gerar História</Button>
+        <Button style={{ backgroundColor: '#3B82F6', color: '#ffffff' }}  className='p-10 text-2xl'>Gerar História</Button>
       </div>
     </div>
   )
