@@ -1,0 +1,39 @@
+const {
+    GoogleGenerativeAI,
+    HarmCategory,
+    HarmBlockThreshold,
+  } = require("@google/generative-ai");
+  
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+  const genAI = new GoogleGenerativeAI(apiKey);
+  
+  const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-flash",
+  });
+  
+  const generationConfig = {
+    temperature: 1,
+    topP: 0.95,
+    topK: 40,
+    maxOutputTokens: 8192,
+    responseMimeType: "application/json",
+  };
+  
+  
+    export const chatSession = model.startChat({
+      generationConfig,
+      history: [
+        {
+          role: "user",
+          parts: [
+            {text: "create kids story on description for 5-8 Years kids, Educational story, and all images in Paper cut style: story of boy Magic School, give me 5 chapter, With detailed image text prompt for each of chapter and image prompt for story cover book with story name, all in JSON field format"},
+          ],
+        },
+        {
+          role: "model",
+          parts: [
+            {text: "```json\n{\n  \"story\": {\n    \"title\": \"The Boy Who Went to Magic School\",\n    \"cover\": {\n      \"image_prompt\": \"A papercut illustration of a boy with wide eyes, wearing a pointed wizard hat, standing in front of a magnificent, colorful castle with swirling magic coming out of the windows. The sky is filled with stars and a crescent moon.\",\n      \"description\": \"The cover image is a papercut design. It shows a young boy, dressed in a wizard's hat and robe, standing with wonder and excitement before a large, magical castle. The castle is filled with swirling, colorful magic, and the sky above is dotted with stars and a crescent moon.\"\n    },\n    \"chapters\": [\n      {\n        \"chapter_title\": \"The Mysterious Invitation\",\n        \"image_prompt\": \"A papercut illustration of a boy sitting at his kitchen table, staring at a brightly colored envelope with a wax seal depicting a magical star. The boy is looking surprised and curious. \",\n        \"description\": \"The image shows a boy sitting at his kitchen table, looking at a brightly colored envelope with a wax seal. The seal depicts a magical star, hinting at something extraordinary. The boy's expression is a mixture of surprise and wonder.\",\n        \"text\": \"Toby was a curious boy who loved exploring the woods behind his house. He dreamt of adventures and magical discoveries. One day, while gathering acorns, he stumbled upon a brightly colored envelope lying beneath a giant oak tree. It had a wax seal depicting a shining star. Toby's heart skipped a beat. He had never seen anything like it before. He carefully opened the envelope and found a hand-written invitation. It read: 'To the most imaginative and curious young wizard, you are cordially invited to attend the Magic School, where you will learn to wield the power of the stars.' Toby couldn't believe his eyes. Was it real? Magic school? He couldn't wait to find out!\"\n      },\n      {\n        \"chapter_title\": \"Journey to the Magic School\",\n        \"image_prompt\": \"A papercut illustration of a boy on a magic carpet flying over a vast, colorful landscape with mountains, rivers, and forests. He is waving excitedly at the clouds and stars.\",\n        \"description\": \"The image is a papercut scene showing the boy riding on a magic carpet. He is flying through the sky over rolling hills, sparkling rivers, and lush forests. He is waving excitedly at the clouds and twinkling stars above.\",\n        \"text\": \"The invitation said the magic school was hidden in the clouds. Toby was excited but also a little nervous. How would he get there? He looked around, expecting a magical portal or a talking animal. But there was nothing. Then, a gentle breeze brushed his face, and a shimmering, golden carpet appeared. It was a magic carpet! Toby jumped on, and with a whoosh, he was soaring through the clouds, the world a beautiful blur of color and light below. He waved at the clouds, feeling like he was in a dream.\"\n      },\n      {\n        \"chapter_title\": \"The Magic School\",\n        \"image_prompt\": \"A papercut illustration of a grand, colorful castle with towers and windows filled with magical lights and swirling magic. Children in wizard robes are flying on broomsticks, playing with fireflies, and practicing magic spells.\",\n        \"description\": \"The image shows a magical castle, built of colorful stones and shimmering with light. Children in wizard robes are flying on broomsticks, giggling as they learn spells. The castle windows glow with magic, and the sky around it is filled with twinkling stars.\",\n        \"text\": \"As Toby approached the clouds, he saw a magnificent sight. A castle made of rainbow-colored stone, its towers reaching for the stars. It was the Magic School! He landed gently on the lawn, and the castle doors swung open to greet him. Inside, children in wizard robes were flying on broomsticks, playing with fireflies, and practicing spells. Toby was amazed. It was even better than he imagined. A friendly old wizard, with a long white beard and twinkling eyes, welcomed Toby with a warm smile. 'Welcome, young wizard,' he said. 'The magic adventure begins now!'\"\n      },\n      {\n        \"chapter_title\": \"Lessons in Magic\",\n        \"image_prompt\": \"A papercut illustration of the boy in a wizard robe, learning different magic spells from a friendly wizard with a long white beard and a magical staff.  There are books filled with spells, floating candles, and glowing potion bottles.\",\n        \"description\": \"The image is a papercut scene showing the boy, now in a wizard robe, studying with the old wizard. There are books filled with spells, floating candles, and bubbling potion bottles. The wizard is pointing at a book, explaining a spell, and the boy is listening intently.\",\n        \"text\": \"Toby spent his days learning magic at the school. He discovered the secrets of levitating objects, turning water into lemonade, and even making flowers bloom with a touch of his hand. He learned to control the power of the stars, summoning them to light his way at night. The wizard was a wonderful teacher, full of patience and wisdom. Toby loved every minute of his lessons, and he learned that the most powerful magic was the magic of friendship and kindness.\"\n      },\n      {\n        \"chapter_title\": \"The Magical Test\",\n        \"image_prompt\": \"A papercut illustration of the boy standing on a platform in front of the wizard.  He is concentrating, with a determined look on his face, as he performs a powerful spell.  There are stars and colorful light surrounding him, and the wizard is watching proudly. \",\n        \"description\": \"The image shows the boy standing on a platform, looking focused and determined. He is surrounded by stars and colorful light as he performs a powerful spell. The wizard watches him proudly from below.\",\n        \"text\": \"Finally, the day of the magical test arrived. Toby was nervous, but he knew he was ready. The wizard asked him to perform a spell that would help others. Toby closed his eyes and concentrated. He imagined all the people in the world who needed help, and a powerful wave of magic flowed through him.  He raised his hands, and a beautiful rainbow of light filled the sky, spreading joy and hope across the land. The wizard smiled, knowing Toby had learned the true meaning of magic. He had discovered that the most important magic was the magic of kindness and the power to make a difference in the world.\" \n      }\n    ]\n  }\n}\n```"},
+          ],
+        },
+      ],
+    });

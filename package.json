@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:push":"drizzle-kit push",
-    "db:studio":"drizzle-kit studio"
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.7.5",
+    "@google/generative-ai": "^0.21.0",
     "@neondatabase/serverless": "^0.10.1",
     "@nextui-org/button": "^2.0.38",
     "@nextui-org/navbar": "^2.0.37",

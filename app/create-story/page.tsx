@@ -6,7 +6,9 @@ import StoryType from './_components/StoryType'
 import AgeGroup from './_components/AgeGroup'
 import ImageStyle from './_components/ImageStyle'
 import { Button } from '@nextui-org/button'
+import { chatSession } from '@/config/GeminiAi'
 
+const CREATE_STORY_PROMPT=process.env.NEXT_PUBLIC_CREATE_STORY_PROMPT
 export interface fieldData{
   fieldName:String,
   fieldValue:String
@@ -21,6 +23,7 @@ export interface formDataType{
 function CreateStory() {
 
   const [formData,setFormData]=useState<formDataType>();
+  const [loading, setLoading]=useState(false);
 
   /**
    * usado para adicionar dados ao formulário
@@ -35,6 +38,26 @@ function CreateStory() {
     }));
     console.log(formData)
   }
+
+  const GenerateStory=async()=>{
+    setLoading(true)
+    const FINAL_PROMPT=CREATE_STORY_PROMPT
+    ?.replace('{ageGroup}', formData?.ageGroup??'')
+    .replace('{storyType}', formData?.storyType??'')
+    .replace('{storySubject}', formData?.storySubject??'')
+    .replace('{imageStyle}', formData?.imageStyle??'')
+    // IA Gerador de Histórias
+    try{
+     const result=await chatSession.sendMessage(FINAL_PROMPT);
+     console.log(result?.response.text());
+     setLoading(false);
+    }catch(e){
+      console.log(e)
+      setLoading(false);
+    }
+    // Salvo no Banco de Dados
+
+  };
 
   return (
     <div className='p-10 md:px-20 lg:px-40'>
@@ -53,7 +76,12 @@ function CreateStory() {
       </div>
 
       <div className='flex justify-end my-10'>
-        <Button style={{ backgroundColor: '#3B82F6', color: '#ffffff' }}  className='p-10 text-2xl'>Gerar História</Button>
+        <Button style={{ backgroundColor: '#3B82F6', color: '#ffffff' }}
+        disabled={loading}
+        className='p-10 text-2xl'
+        onClick={GenerateStory}>
+          Gerar História
+          </Button>
       </div>
     </div>
   )
